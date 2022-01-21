@@ -22,7 +22,6 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Add access_token
-        with:
-          ACCESS_TOKEN: ${{ SECRETS.ACCESS_TOKEN }}
+        run: 'echo "ACCESS_TOKEN: ${{ SECRETS.ACCESS_TOKEN }}" > test_config.yml'
       - name: Run tests
-        run: poetry run pytest -s
+        run: poetry run pytest

@@ -8,7 +8,7 @@ jobs:
       matrix:
         python-version: [3.7, 3.8, 3.9]
         poetry-version: [1.1.12]
-        os: [ubuntu-18.04, windows-latest]
+        os: [ubuntu-18.04]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -19,9 +19,11 @@ jobs:
         uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: ${{ matrix.poetry-version }}
+      - name: .venv in project root
+        run: poetry config virtualenvs.in-project true
       - name: Install dependencies
         run: poetry install
       - name: Add access_token
-        run: export ACCESS_TOKEN="${{ SECRETS.ACCESS_TOKEN }}"
+        run: . .venv/bin/activate && export ACCESS_TOKEN="${{ SECRETS.ACCESS_TOKEN }}"
       - name: Run tests
         run: poetry run pytest

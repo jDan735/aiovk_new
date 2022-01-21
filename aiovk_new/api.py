@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from os import access
 
 from .audio import Audio
 from .wall import Wall
@@ -6,7 +7,7 @@ from .wall import Wall
 
 @dataclass
 class AioVK:
-    access_token: str
+    access_token: str = field(repr=None)
     api_version: str = "5.131"
 
     def __post_init__(self):

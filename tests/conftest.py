@@ -1,7 +1,7 @@
+import os
+
 import pytest
 from aiovk_new import AioVK
-
-import os
 
 
 @pytest.fixture(scope="function")

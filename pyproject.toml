@@ -4,6 +4,7 @@ version = "0.0.1"
 description = "A simple async library for vk with pydantic & httpx"
 authors = ["Daniel Zakharov <daniel734@bk.ru>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"

@@ -11,7 +11,7 @@ class Song(BaseModel):
     artist: str
     album_name: str = None
 
-    url: AnyUrl
+    url: AnyUrl = None
 
     is_explicit: bool
     is_focus_track: bool

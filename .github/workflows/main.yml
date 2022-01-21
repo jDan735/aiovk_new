@@ -24,4 +24,4 @@ jobs:
       - name: Add access_token
         run: export ACCESS_TOKEN="${{ SECRETS.ACCESS_TOKEN }}"
       - name: Run tests
-        run: pytest
+        run: poetry run pytest

@@ -22,6 +22,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Add access_token
-        run: export ACCESS_TOKEN="${{ SECRETS.ACCESS_TOKEN }}"
+        with:
+          ACCESS_TOKEN: ${{ SECRETS.ACCESS_TOKEN }}
       - name: Run tests
         run: poetry run pytest -s

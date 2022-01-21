@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel, AnyUrl
 from .photo import Photo
 
@@ -10,4 +8,4 @@ class Link(BaseModel):
     title: str
     description: str
 
-    photo: Optional[Photo]
+    photo: Photo = None

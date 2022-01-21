@@ -1,5 +1,4 @@
 import datetime
-from typing import Optional
 
 from pydantic import BaseModel
 
@@ -8,8 +7,8 @@ from .attachments import Photo, Link
 
 class Attachment(BaseModel):
     type: str
-    photo: Optional[Photo]
-    link: Optional[Link]
+    photo: Photo = None
+    link: Link = None
 
 
 class Post(BaseModel):

@@ -1,6 +1,6 @@
 import datetime
 
-from pydantic import BaseModel, AnyUrl
+from pydantic import BaseModel
 
 
 class Song(BaseModel):
@@ -11,7 +11,7 @@ class Song(BaseModel):
     artist: str
     album_name: str = None
 
-    url: AnyUrl = None
+    url: str = None
 
     is_explicit: bool
     is_focus_track: bool
